@@ -1,0 +1,131 @@
+/* Style for the page */
+.container {
+  background: linear-gradient(120deg, #2980b9, #8e44ad);
+  font-family: Verdana, sans-serif;
+  height: 100vh;
+  padding-top: 60px;
+}
+.text-danger{
+  color: red;
+}
+
+/* Style for the form container */
+.form-container {
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+  margin-top: 150px;
+
+}
+
+/* Style for the form label */
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style for the form input */
+.form-container input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  animation: input-fade-in 0.5s ease;
+}
+
+/* Style for the form button */
+.form-container button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  animation: button-fade-in 1s ease;
+}
+
+/* Hover effect for the form button */
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Animation for the form container */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/* Animation for the form input */
+@keyframes input-focus {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+/* Animation for input fade in */
+@keyframes input-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* Animation for button fade in */
+@keyframes button-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.form-container form {
+  animation: slide-up 0.5s ease;
+}
+
+/* Apply focus animation to input fields */
+.form-container input:focus {
+  animation: input-focus 0.3s ease-in-out;
+}

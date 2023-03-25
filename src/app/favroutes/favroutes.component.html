@@ -1,0 +1,9 @@
+<app-navbar></app-navbar>
+<ul class="todo__list">
+    <li *ngFor="let task of tasks">
+      <label for="todo-1">
+        <span class="item__title"  id="{{task.id}}">{{ task.text }}</span>
+      </label>
+    </li>
+</ul>
+<app-footer></app-footer>

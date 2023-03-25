@@ -1,0 +1,24 @@
+<div class="container">
+  <section class="loginPage">
+    <div class="center">
+      <h1>Login</h1>
+      <form (ngSubmit)="userLogin()">
+        <div class="txt_field">
+          <input type="text" [(ngModel)]="newUser" name="username" required>
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="text" [(ngModel)]="favQuote" name="favQuote">
+          <span></span>
+          <label>Favorite Quote</label>
+        </div>
+        <button>Login</button>
+        <div class="signup_link">
+          Not a member? <a >Signup</a>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+

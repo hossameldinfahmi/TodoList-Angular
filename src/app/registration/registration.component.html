@@ -1,0 +1,20 @@
+<div class="container">
+<section class="form-container ">
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"  #username="ngModel" ngModel type="text" id="username" required>
+        <p *ngIf="username.touched && username.errors?.['required']" class="text-danger text-uppercase">username is
+          required</p>
+      
+        <label for="email">Email:</label>
+        <input [ngClass]="email.touched ? email.errors ? 'not-valid':'valid' :''" class="form-control" name="email" #email="ngModel" [ngModel]="emailDefaultValue" type="email" id="email" required email>
+        <p *ngIf="email.touched && email.errors?.['required']" class="text-danger text-uppercase">email is required</p>
+        <p *ngIf="email.touched && email.errors?.['email']" class="text-danger text-uppercase">email is not valid</p>
+        
+        <label for="password">Password:</label>
+        <input  name="password" #password type="password" id="password" required>
+      
+        <button type="button" (click)="registerUser(username.value, email.value, password.value)">Register</button>
+      </form>
+</section>
+</div>

@@ -1,0 +1,95 @@
+.todo__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .todo__list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .todo__list li label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .item__title {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .item__title:hover {
+    color: #00a0e9;
+  }
+  
+  .done-task {
+    text-decoration: line-through;
+    color: #666;
+  }
+  
+  .checkbox__wrapper {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to bottom right, #0072ff, #00c6ff);
+    margin-right: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+  }
+  
+  .checkbox__box {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 0.25rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .checkbox__box.checked {
+    transform: translateX(100%);
+  }
+  
+  .checkbox__wrapper:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #0072ff, #00c6ff);
+  }
+  
+  .checkbox__wrapper:hover .checkbox__box {
+    transform: translateX(100%);
+  }
+  
+  /* Gradient animation */
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .todo {
+    background: linear-gradient(to bottom right, #0072ff, #00c6ff);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+  }
+  
+  .todo__list li {
+    background-color: #fff;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  }
+  

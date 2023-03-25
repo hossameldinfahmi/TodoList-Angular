@@ -1,0 +1,36 @@
+<section class="todoContainer">
+    <div class="container">
+      <h1>{{username}}</h1>
+    <p>{{fav}}</p>
+    </div>
+    
+  <div class="todo__wrapper">
+    <div class="todo__content">
+      <h1>TODO</h1>
+      <form class="newItem">
+        <div class="newItem__input">
+          <input type="text" [(ngModel)]="newTodo" name="add" placeholder="Add item...">
+          <i id="plus" class="fas fa-plus"></i>
+        </div>
+
+        <button class="filter" (click)="addTask()">
+          Add Tasks
+        </button>
+
+      </form>
+      <ul class="todo__list">
+        <li *ngFor="let task of tasks">
+          <input type="checkbox" (click)="markTaskAsDone(task)" 
+            id="todo-1">
+          <label for="todo-1">
+            <span class="check__box">
+            </span>
+            <span class="item__title"  [ngClass]="{'done-task': task.done}" id="{{task.id}}">{{ task.text }}</span>
+          </label>
+          <button (click)="deleteTask(task.id)" class="deleteIcon">X</button>
+          <button (click)="favFunc(task)" [ngClass]="task.fav ? 'fav' : ''" class="deleteIcon">♡</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
