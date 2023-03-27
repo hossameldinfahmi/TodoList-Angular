@@ -15,10 +15,10 @@ import { RegistrationComponent } from './registration/registration.component';
     {path:'login', component:LoginComponent },
     {path:'todos', component: TodosComponent,canActivate:[GardService]},
     {path:'signup', component: RegistrationComponent},
-    {path:'completed', component: CompletedComponent},
-    {path:'deleted', component: DeletedTasksComponent},
-    {path:'fav', component: FavroutesComponent},
-    {path:'about', component: AboutComponent},
+    {path:'completed', component: CompletedComponent,canActivate:[GardService]},
+    {path:'deleted', component: DeletedTasksComponent,canActivate:[GardService]},
+    {path:'fav', component: FavroutesComponent,canActivate:[GardService]},
+    {path:'about', component: AboutComponent,canActivate:[GardService]},
     {path: '**', component:NotFoundComponent},
     {path:'404',component:NotFoundComponent}
   ];

@@ -19,10 +19,14 @@ export class LoginComponent {
   }
   loginForm = new FormGroup({
     username: new FormControl(null, [Validators.minLength(3), Validators.maxLength(15), Validators.required]),
+    favQuote: new FormControl(null, [Validators.maxLength(50)])
   })
   userLogin(loginForm:FormGroup){
-    let user : User  = {id:this.generateUniqueId(),username:this.newUser, fav:this.favQuote};
-    this.TodosService.userLogin(user);
+    this.favQuote = loginForm.get('favQuote')?.value;
+    let user : User  = {id:this.generateUniqueId(),username:this.newUser, favQuote: this.favQuote};
+    console.log(`This User After Login ${user.favQuote}`);
+    this.TodosService.userLogin(user)
+    
   }
 
 }

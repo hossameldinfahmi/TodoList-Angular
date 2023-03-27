@@ -9,19 +9,19 @@
           <label>Username</label>
         </div>
         <div *ngIf="loginForm.get('username')?.errors != null && loginForm.get('username')?.touched" class="alert ">
-          <p *ngIf="loginForm.get('username')?.errors?.['required']">The Username Required</p>
+          <p *ngIf="loginForm.get( 'username')?.errors?.['required']">The Username Required</p>
           <p *ngIf="loginForm.get('username')?.errors?.['minlength']">Min length 3</p>
           <p *ngIf="loginForm.get('username')?.errors?.['maxlength']">Max length 15</p>
           
         </div>
-        <div class="txt_field">
-          <input type="text" [(ngModel)]="favQuote" name="favQuote">
+        <div class="txt_field fav_field">
+          <textarea formControlName="favQuote" class="fav_quote" type="text" [(ngModel)]="favQuote" name="favQuote"></textarea>
           <span></span>
           <label>Favorite Quote</label>
         </div>
-        <button>Login</button>
+        <button class="login-btn">Login</button>
         <div class="signup_link">
-          Not a member? <a >Signup</a>
+          Not a member? <a routerLink="/">Signup</a>
         </div>
       </form>
     </div>

@@ -14,7 +14,7 @@ export class TodoComponent {
   tasks: Task[] | undefined;
   users: any = [{}];
   username: string = '';
-  fav: string = '';
+  favQuote: string = '';
   constructor(
     private TodosService: TodosService,
     private GardService: GardService
@@ -24,8 +24,8 @@ export class TodoComponent {
     this.tasks = this.TodosService.getTasks();
     this.users = this.TodosService.getUsers();
     this.username = this.users[0].username;
-    this.fav = this.users[0].fav;
-    console.log(`This is logged  ${this.GardService.isLogged}`);
+    this.favQuote = this.users[0].favQuote;
+    console.log(`the favQoute from Todos ${this.users[0].username}`);
   }
 
   addTask() {

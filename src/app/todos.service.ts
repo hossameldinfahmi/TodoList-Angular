@@ -10,8 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TodosService {
   todos: any;
-  usersString: any = localStorage.getItem('users');
-  users = JSON.parse(this.usersString) || [];
+  users: User[] = [];
   private apiUrl = 'https://dummyjson.com/todos';
 
   constructor(
@@ -74,8 +73,8 @@ export class TodosService {
       alert('You have to login first!');
       this.GardService.isLogged = false;
     }
-    localStorage.setItem('users', JSON.stringify(this.users));
   }
+
   findFavFunc() {
     return this.tasks.filter((ele: any) => ele.fav == true);
   }

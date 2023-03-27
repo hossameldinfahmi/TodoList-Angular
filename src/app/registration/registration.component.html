@@ -11,8 +11,14 @@
         <p *ngIf="email.touched && email.errors?.['required']" class="text-danger text-uppercase">email is required</p>
         <p *ngIf="email.touched && email.errors?.['email']" class="text-danger text-uppercase">email is not valid</p>
         
-        <label for="password">Password:</label>
-        <input  name="password" #password type="password" id="password" required>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" class="form-control" [(ngModel)]="user.password" #password="ngModel" minlength="8" required>
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+            <div *ngIf="password.errors?.['required']" class="text-danger">Password is required.</div>
+            <div *ngIf="password.errors?.['minlength']" class="text-danger">Password must be at least 8 characters long.</div>
+          </div>
+        </div>
       
         <button type="button" (click)="registerUser(username.value, email.value, password.value)">Register</button>
       </form>

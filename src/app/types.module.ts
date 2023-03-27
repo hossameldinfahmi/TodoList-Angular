@@ -10,7 +10,7 @@ export interface Task {
 export interface User {
   id: string;
   username: string;
-  fav: string;
+  favQuote: string;
 }
 
 @NgModule({})
