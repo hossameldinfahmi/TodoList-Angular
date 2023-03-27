@@ -2,11 +2,17 @@
   <section class="loginPage">
     <div class="center">
       <h1>Login</h1>
-      <form (ngSubmit)="userLogin()">
+      <form [formGroup] ='loginForm' (ngSubmit)="userLogin(loginForm)">
         <div class="txt_field">
-          <input type="text" [(ngModel)]="newUser" name="username" required>
+          <input formControlName="username" type="text" [(ngModel)]="newUser" name="username" required>
           <span></span>
           <label>Username</label>
+        </div>
+        <div *ngIf="loginForm.get('username')?.errors != null && loginForm.get('username')?.touched" class="alert ">
+          <p *ngIf="loginForm.get('username')?.errors?.['required']">The Username Required</p>
+          <p *ngIf="loginForm.get('username')?.errors?.['minlength']">Min length 3</p>
+          <p *ngIf="loginForm.get('username')?.errors?.['maxlength']">Max length 15</p>
+          
         </div>
         <div class="txt_field">
           <input type="text" [(ngModel)]="favQuote" name="favQuote">

@@ -130,3 +130,6 @@
     transition: .5s;
     color: #666666;
   }
+  .alert p {
+    color: red;
+  }

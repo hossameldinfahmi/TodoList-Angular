@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { User } from '../types.module';
+import { TodosService } from '../todos.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  users: any[] = [];
+  users: User[] = [];
+  todos: any;
 
-  // constructor(private http: HttpClient) { 
-  //   this.http.get<any[]>('https://dummyjson.com/users').subscribe(data => {
-  //     console.log(data);
-  //     this.users = data;
-  //   });
-  // }
+  constructor(private TodosService: TodosService) { 
+    this.TodosService.getTodos().subscribe(data => {
+      this.todos = data;      
+    });
+
+  }
 }

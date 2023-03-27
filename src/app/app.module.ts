@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,7 @@ import { CompletedComponent } from './completed/completed.component';
 import { TypesModule, Task, User } from './types.module';
 import { DeletedTasksComponent } from './deleted-tasks/deleted-tasks.component';
 import { FavroutesComponent } from './favroutes/favroutes.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -34,14 +35,16 @@ import { FavroutesComponent } from './favroutes/favroutes.component';
     AboutComponent,
     CompletedComponent,
     DeletedTasksComponent,
-    FavroutesComponent
-  
+    FavroutesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    TypesModule
+    TypesModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

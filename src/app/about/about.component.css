@@ -104,3 +104,117 @@
     }
   }
   
+
+  .todo__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .todo__list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .todo__list li:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0.5rem;
+    background-color: #ff007f;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+  
+  .todo__list li label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .todo__list li .item__title {
+    flex: 1;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    color: #333;
+  }
+  
+  .todo__list li .item__id {
+    font-size: 1rem;
+    color: #666;
+    margin-right: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .todo__list li:hover .item__id {
+    opacity: 1;
+  }
+  
+  .todo__list li .delete__button {
+    color: #ff007f;
+    margin-left: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .todo__list li:hover .delete__button {
+    opacity: 1;
+  }
+  
+  .delete__button:hover {
+    cursor: pointer;
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slide-in-left {
+    from { transform: translateX(-10%); }
+    to { transform: translateX(0); }
+  }
+  
+  @keyframes slide-in-right {
+    from { transform: translateX(10%); }
+    to { transform: translateX(0); }
+  }
+  
+  @keyframes slide-out-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-10%); }
+  }
+  
+  @keyframes slide-out-right {
+    from { transform: translateX(0); }
+    to { transform: translateX(10%); }
+  }
+  
+  .slide-in-left {
+    animation: slide-in-left 0.5s ease;
+  }
+  
+  .slide-in-right {
+    animation: slide-in-right 0.5s ease;
+  }
+  
+  .slide-out-left {
+    animation: slide-out-left 0.5s ease;
+  }
+  
+  .slide-out-right {
+    animation: slide-out-right 0.5s ease;
+  }
+  
+  .fade-in {
+    animation: fade-in 0.5s ease;
+  }
+  

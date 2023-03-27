@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import {GardService} from '../gard.service'
 import {TodosService} from '../todos.service'
 import { TypesModule, Task, User } from '.././types.module';
+import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 
+FormControl
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,13 +17,13 @@ export class LoginComponent {
   generateUniqueId() {
     return '_' + Math.random().toString(36).substr(2, 9);
   }
-  userLogin(){
+  loginForm = new FormGroup({
+    username: new FormControl(null, [Validators.minLength(3), Validators.maxLength(15), Validators.required]),
+  })
+  userLogin(loginForm:FormGroup){
     let user : User  = {id:this.generateUniqueId(),username:this.newUser, fav:this.favQuote};
     this.TodosService.userLogin(user);
   }
-
-
-
 
 }
 

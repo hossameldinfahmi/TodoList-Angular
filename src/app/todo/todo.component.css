@@ -198,6 +198,8 @@ transition-duration: 0.2s;
 border-radius: 5px;
 float: right;
 margin: 5px;
+width: 30px;
+height: 30px;
 }
 .deleteIcon:hover{
 background-color: #c44d56;
@@ -205,7 +207,8 @@ color: #fff;
 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 ul li {
-margin: 20px 10px;
+margin: 35px 10px;
+
 }
 
 .done-task {

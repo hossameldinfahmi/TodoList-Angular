@@ -10,12 +10,25 @@
 	<p>Hi, my name is Hossam and I'm a FrontEnd Developer. I've been interested in web devlopemntsince I was a kid, and that's what led me to pursue a career in Web devlopment.</p>
 
 	<!-- More Information -->
-	<h2>More Information</h2>
+	<h2>Api Tasks</h2>
+
+	<ul class="todo__list">
+		<li *ngFor="let task of todos.todos" class="slide-in-left">
+		  <label for="todo-{{task.id}}">
+			<span class="item__title" id="{{task.id}}">{{ task.todo }}</span>
+			<span class="item__id" id="{{task.id}}">{{ task.id }}</span>
+		  </label>
+		</li>
+	</ul>
+	  
+
 	<ul>
-		<!-- <li><strong>Email:</strong>{{ users[0].email }}</li>
-		<li><strong>Website:</strong> <a href="#">{{ users[0].phone }}</a></li>
-		<li><strong>LinkedIn:</strong> <a href="#">{{ users[0].firstName }}</a></li> -->
+		<li><strong>Email:</strong>hossameldinfahmi@gmail.com</li>
+		<li><strong>Documntaion:</strong> <a href="https://github.com/hossameldinfahmi/TodoList-Angular">The app Documntion</a></li>
+		<li><strong>Github:</strong> <a href="https://github.com/hossameldinfahmi/TodoList-Angular">Github</a></li>
 		<li><strong>Twitter:</strong> <a href="#">fahmyuiux</a></li>
 	</ul>
+
+
 </div>
 <app-footer></app-footer>
